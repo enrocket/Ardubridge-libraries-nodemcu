@@ -1,6 +1,7 @@
 # Ardubridge library for Arduino / NodeMcu-ESP8266
-Ardubridge.com serves as a connection link between your weather station and popular weather web platforms, enabling easy sharing and display of meteorological data online<br>
-This repository contains a library for Arduino and example code for its use, specific for NodeMCU-ESP8266 boards.<br>
+Ardubridge.com serves as a connection link between your weather station and popular weather web platforms, enabling easy sharing and display of meteorological data online
+
+This repository contains a library for Arduino and example code for its use, specific for NodeMCU-ESP8266 boards.
 
 With this library you can send your station's weather parameters to Ardubridge.com with as little code as possible.<br>
 
