@@ -86,7 +86,7 @@ void Ardubridge::sendData() {
   if (WiFi.status() == WL_CONNECTED) {
     HTTPClient http;
     String url = "http://ardubridge.com:80/data/recibir.php";
-    if (http.begin(_wifiClient, url)) {
+    if (http.begin(ab_wifiClient, url)) {
       http.addHeader("Content-Type", "application/x-www-form-urlencoded");
         String httpRequestData = "station_id=" + String(ab_station_id) + "&station_pass=" + ab_station_pass + 
                          "&temp=" + String(ab_temp) + "&rh=" + String(ab_rh) + 
