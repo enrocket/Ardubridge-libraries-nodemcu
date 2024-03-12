@@ -87,13 +87,13 @@ void Ardubridge::sendData() {
     HTTPClient http;
     String url = "http://ardubridge.com:80/data/recibir.php";
     if (http.begin(ab_wifiClient, url)) {
-      http.addHeader("Content-Type", "application/x-www-form-urlencoded");
-        String httpRequestData = "station_id=" + String(ab_station_id) + "&station_pass=" + ab_station_pass + 
-                         "&temp=" + String(ab_temp) + "&rh=" + String(ab_rh) + 
-                         "&mbar=" + String(ab_mbar) + "&winddir=" + String(ab_winddir) + 
-                         "&wind_avg=" + String(ab_wind_avg) + "&wind_min=" + String(ab_wind_min) + 
-                         "&wind_max=" + String(ab_wind_max) + "&precip=" + String(ab_precip) + 
-                         "&uv=" + String(ab_uv) + "&dewpoint=" + String(ab_dewpoint);
+      http.addHeader("Content-Type", "application/json");
+        String httpRequestData = "{\"station_id\":\"" + String(ab_station_id) + "\",\"station_pass\":\"" + ab_station_pass + 
+                         "\",\"temp\":" + String(ab_temp) + ",\"rh\":" + String(ab_rh) + 
+                         ",\"mbar\":" + String(ab_mbar) + ",\"winddir\":" + String(ab_winddir) + 
+                         ",\"wind_avg\":" + String(ab_wind_avg) + ",\"wind_min\":" + String(ab_wind_min) + 
+                         ",\"wind_max\":" + String(ab_wind_max) + ",\"precip\":" + String(ab_precip) + 
+                         ",\"uv\":" + String(ab_uv) + ",\"dewpoint\":" + String(ab_dewpoint) + "}";
       int httpResponseCode = http.POST(httpRequestData);
       if (httpResponseCode == 200) {
         Serial.println("Data sent successfully.");
