@@ -8,6 +8,7 @@
 class Ardubridge {
 public:
   Ardubridge();
+  Ardubridge(const char* ssid, const char* password, const char* station_id, const char* station_pass);
   void setup(const char* ssid, const char* password, const char* station_id, const char* station_pass, unsigned long send_interval_minutes);
   void loop();
   void setTemperature(float ab_temp);
@@ -17,8 +18,8 @@ public:
   void setWindSpeed(float ab_wind_avg);
   void setWindSpeedMin(float ab_wind_min);
   void setWindSpeedMax(float ab_wind_max);
-  void setRainfall(float ab_precip);
-  void setUVIndex(float ab_uv);
+  void setPrecipitation(float ab_precip);
+  void setUV(float ab_uv);
   void setDewPoint(float ab_dewpoint);
 
 private:
